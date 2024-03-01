@@ -20,6 +20,7 @@
     'trigger' => null,
     'visible' => true,
     'width' => 'sm',
+    'zindex' => null
 ])
 
 <div
@@ -66,8 +67,10 @@
         x-transition.duration.300ms.opacity
         x-cloak
         @class([
-            'fixed inset-0 z-40 min-h-full overflow-y-auto overflow-x-hidden transition',
+            'fixed inset-0 min-h-full overflow-y-auto overflow-x-hidden transition data-test-modal',
             'flex items-center' => ! $slideOver,
+            'z-40' => ($zindex == null),
+            'z-30' => ($zindex == "z30")
         ])
     >
         <div
