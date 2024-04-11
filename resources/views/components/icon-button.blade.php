@@ -64,7 +64,7 @@
             title="{{ $label }}"
         @endif
         @if ($tooltip)
-            x-tooltip.raw="{{ $tooltip }}"
+            x-tooltip.raw="{!! $tooltip !!}"
         @endif
         type="{{ $type }}"
         {!! $disabled ? 'disabled' : '' !!}
