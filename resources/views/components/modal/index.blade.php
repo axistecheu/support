@@ -20,7 +20,8 @@
     'trigger' => null,
     'visible' => true,
     'width' => 'sm',
-    'zindex' => null
+    'zindex' => null,
+    'class' => null
 ])
 
 <div
@@ -193,8 +194,10 @@
 
                     <div
                         @class([
-                            'filament-modal-content space-y-2 p-2',
-                            'flex-1 overflow-y-auto' => ($width === 'screen') || $slideOver || $scrollableContent,
+                           'filament-modal-content space-y-2 p-2',
+                           'flex-1' => !($width === 'screen' || $slideOver || $scrollableContent),
+                           'overflow-y-auto' => $width === 'screen' || $slideOver || $scrollableContent,
+                           'overflow-y-hidden' => $class
                         ])
                     >
                         @if ($heading || $subheading)
